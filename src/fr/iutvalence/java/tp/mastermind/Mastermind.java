@@ -1,3 +1,4 @@
+package fr.iutvalence.java.tp.mastermind
 /**
  * Represente une partie de Mastermind
  * @author chevrotl
