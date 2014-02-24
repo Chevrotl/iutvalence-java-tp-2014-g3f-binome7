@@ -10,7 +10,7 @@ public class Pion
 	/**
 	 * couleur du pion
 	 */
-	private int couleur ;
+	public int couleur ;
 	
 	/**
 	 * Creer un pion d'une couleur donnée
