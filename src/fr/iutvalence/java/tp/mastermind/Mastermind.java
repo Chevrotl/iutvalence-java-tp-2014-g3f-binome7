@@ -9,23 +9,33 @@ public class Mastermind
 	//Constantes
 	// TODO renommer (plus lisible)
 	// TODO écrire le commentaire
-	public final static int DEFAUT_NB_PIONS_SECRET = 5;
+	/**
+	 * Nombres de pions par defaut de la combinaison a decouvrir
+	 */
+	public final static int NOMBRE_PIONS_A_DECOUVRIR_PAR_DEFAUT = 5;
 	
 	// attributs
 	// TODO renommer (plus lisible)
 	// TODO écrire le commentaire
-	private int nbPionsSecret ;
+	/**
+	 * Nombres de pions à découvrir
+	 */
+	private int nombrePionsADecouvrir ;
 	
 	//constructeurs
 	// TODO écrire le commentaire
+	/**
+	 * Constructeur par defaut, avec les valeurs par defaut
+	 */
 	public Mastermind()
 	{
-		this.nbPionsSecret = DEFAUT_NB_PIONS_SECRET ;
+		this.nombrePionsADecouvrir = NOMBRE_PIONS_A_DECOUVRIR_PAR_DEFAUT ;
 	}
 	
 	// TODO écrire un commentaire plus précis
 	/**
-	 * Lance l'integralite d'une partie
+	 * Lance l'integralite d'une partie : Tirage d'une combinaison aléatoire, 
+	 * création grille ...
 	 */
 	public void jouer()
 	{
