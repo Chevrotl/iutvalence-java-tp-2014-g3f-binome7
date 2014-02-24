@@ -40,6 +40,5 @@ public class Mastermind
 	public void jouer()
 	{
 		System.out.println("Lancement d'une partie");
-		
 	}
 }
