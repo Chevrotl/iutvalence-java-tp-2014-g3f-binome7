@@ -13,10 +13,6 @@ public class Combinaison
 {
 
 	/**
-	 * couleur du pion par défaut
-	 */
-	private int couleurDuPion ;
-	/**
 	 * Contructeur par defaut créant un tableau de pions aléatoire d'une longeur par défaut
 	 */
 	
