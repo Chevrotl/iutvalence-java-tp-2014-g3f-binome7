@@ -22,6 +22,13 @@ public class Mastermind
 	 */
 	private int nombrePionsADecouvrir ;
 	
+	/**
+	 * Combinaison aléatoire de pion de couleur
+	 */
+	private Combinaison CombinaisonAleatoire ;
+	
+	
+	
 	//constructeurs
 	// TODO écrire le commentaire
 	/**
@@ -30,8 +37,8 @@ public class Mastermind
 	public Mastermind()
 	{
 		this.nombrePionsADecouvrir = NOMBRE_PIONS_A_DECOUVRIR_PAR_DEFAUT ;
-		Combinaison CombinaisonAleatoire = new Combinaison(this.nombrePionsADecouvrir);
-		System.out.println(CombinaisonAleatoire);
+		this.CombinaisonAleatoire = new Combinaison(this.nombrePionsADecouvrir);
+		System.out.println(this.CombinaisonAleatoire);
 	}
 	
 	// TODO écrire un commentaire plus précis
