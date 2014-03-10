@@ -30,6 +30,8 @@ public class Mastermind
 	public Mastermind()
 	{
 		this.nombrePionsADecouvrir = NOMBRE_PIONS_A_DECOUVRIR_PAR_DEFAUT ;
+		Combinaison CombinaisonAleatoire = new Combinaison(this.nombrePionsADecouvrir);
+		System.out.println(CombinaisonAleatoire);
 	}
 	
 	// TODO écrire un commentaire plus précis

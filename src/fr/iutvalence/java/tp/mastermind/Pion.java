@@ -14,7 +14,7 @@ public class Pion
 	
 	/**
 	 * Creer un pion d'une couleur donnée
-	 * @param couleur
+	 * @param couleur couleur du pion
 	 */
 	public Pion (int couleur)
 	{
