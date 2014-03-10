@@ -36,22 +36,16 @@ public class Combinaison
 	
 		
 	/**
-	 * Creation d'un tableau de pion avec une taille donnée 
-	 * @param tailleCombinaisonAleatoire taille de la combinaison a découvir
+	 * Creation d'une combinaison aléatoire, de taille donnée
+	 * @param taille taille de la combinaison a découvrir
 	 */
-	public Combinaison(int tailleCombinaisonAleatoire)
+	public Combinaison(int taille)
 	{
-		this.combinaisonADecouvrir = new Pion[tailleCombinaisonAleatoire];
+		this.combinaisonADecouvrir = new Pion[taille];
 		
-		for(int i = 0; i < tailleCombinaisonAleatoire ; i++)
-		{
-			
-			int couleurAleatoire = new Random().nextInt(8); couleurAleatoire++; 
-			//Creation d'un nombre aleatoire compris entre 1 et 8 pour la couleur du pion
-			this.combinaisonADecouvrir[i] = new Pion (couleurAleatoire) ;
-			
-		}
-		
+		for(int numeroDuPion = 0; numeroDuPion < taille ; numeroDuPion++)
+			this.combinaisonADecouvrir[numeroDuPion] = new Pion ();
+
 	}
 	
 }

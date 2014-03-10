@@ -1,53 +1,80 @@
 package fr.iutvalence.java.tp.mastermind;
+
+import java.util.Random;
+
 /**
  * Definition des 8 couleurs utilisable pour trouver la combinaison
  * @author chevrotl
  *
  */
-public class Couleur
+public enum Couleur
 {
 
 	/**
 	 * Definition d'une palette limitée de couleur, gérée par des entiers
 	 */
 	 
-
-	
-	public final static int BLANC = 1 ;
+	BLANC,
 	/**
 	 * Definition couleur rouge
 	 */
-	public final static int ROUGE = 2 ;
+	ROUGE,
 	
 	/**
 	 * Definition couleur jaune
 	 */
-	public final static int JAUNE = 3 ;
+	JAUNE,
 	
 	/**
 	 * Definition couleur vert
 	 */
-	public final static int VERT = 4 ;
+	VERT,
 	
 	/**
 	 * Definition couleur bleu
 	 */
-	public final static int BLEU = 5 ;
+	BLEU,
 	
 	/**
 	 * Definition couleur violet
 	 */
-	public final static int VIOLET = 6 ;
+	VIOLET,
 	
 	/**
 	 * Definition couleur rose
 	 */
-	public final static int ROSE = 7 ;
+	 ROSE,
 	
 	/**
 	 * Definition couleur orange
 	 */
-	public final static int ORANGE = 8 ;
+	 ORANGE;
 	
 	
+/**
+ * Renvoi une couleur aléatoire définie dans la classe
+ * @return une couleur aléatoire
+ */
+
+public static Couleur obtenirCouleurAleatoire()
+{
+	Random random = new Random();
+	
+	switch (random.nextInt(8))
+	{
+	case 0: return BLANC;
+	case 1: return ROUGE;
+	case 2: return JAUNE;
+	case 3: return VERT;
+	case 4: return BLEU;
+	case 5: return VIOLET;
+	case 6: return ROSE;
+	case 7: 
+	default: return ORANGE;
+	
+	
+	
+	}
+
+}
 }
