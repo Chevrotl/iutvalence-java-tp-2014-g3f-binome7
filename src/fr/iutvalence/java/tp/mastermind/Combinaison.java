@@ -13,23 +13,23 @@ public class Combinaison
 {
 
 	/**
-	 * Contructeur par defaut créant un tableau de pions aléatoire d'une longeur par défaut
+	 * declaration du tableau de pions pour ne pas que ce soit une variable locale
 	 */
-	
-	
+	private Pion[] combinaisonADecouvrir ;
+		
 	/**
 	 * Creation d'un tableau de pion avec une taille donnée 
-	 * @param tailleCombinaisonAleatoire
+	 * @param tailleCombinaisonAleatoire taille de la combinaison a découvir
 	 */
 	public Combinaison(int tailleCombinaisonAleatoire)
 	{
-		Pion[] combinaisonADecouvrir = new Pion[tailleCombinaisonAleatoire];
+		this.combinaisonADecouvrir = new Pion[tailleCombinaisonAleatoire];
 		
 		for(int i = 0; i <= tailleCombinaisonAleatoire ; i++)
 		{
 			int couleurAleatoire = new Random().nextInt(8); couleurAleatoire++; 
 			//Creation d'un nombre aleatoire compris entre 1 et 8 pour la couleur du pion
-			combinaisonADecouvrir[i].couleur = couleurAleatoire ;
+			this.combinaisonADecouvrir[i].couleur = couleurAleatoire ;
 			
 		}
 		
