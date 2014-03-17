@@ -43,4 +43,6 @@ public class Mastermind
 	{
 		System.out.println("Lancement d'une partie");
 	}
+	
+
 }

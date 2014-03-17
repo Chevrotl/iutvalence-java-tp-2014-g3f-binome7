@@ -37,4 +37,20 @@ public class Pion
 	{
 		return this.couleur ;
 	}
+	
+	/**
+	 * methode permettant de comparer la couleur deux pions
+	 * @param pionAComparer
+	 * @return true si le pion a la meme couleur
+	 */
+	public boolean equals(Pion pionAComparer)
+	{
+		if (pionAComparer == null) return false ;
+		if (pionAComparer == this) return true ;
+		
+		if (pionAComparer.couleur == this.couleur)
+			return true ;
+		return false;
+		
+	}
 }
