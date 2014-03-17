@@ -22,7 +22,7 @@ public class Combinaison
 		
 		for (int i = 0; i < this.combinaisonADecouvrir.length ; i++ )
 		{
-			result += this.combinaisonADecouvrir[i].couleur+" ";
+			result += this.combinaisonADecouvrir[i].obtenirCouleur()+" ";
 		}
 		
 		return result;

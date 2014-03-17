@@ -10,7 +10,7 @@ public class Pion
 	/**
 	 * couleur du pion
 	 */
-	public Couleur couleur ;
+	private Couleur couleur ;
 	
 	/**
 	 * Creer un pion d'une couleur aléatoire
@@ -27,5 +27,14 @@ public class Pion
 	public Pion (Couleur couleur)
 	{
 		this.couleur = couleur; 
+	}
+	
+	/**
+	 * accesseur en lecture de l'attribut de la couleur du pion
+	 * @return la couleur du pion 
+	 */
+	public Couleur obtenirCouleur()
+	{
+		return this.couleur ;
 	}
 }
