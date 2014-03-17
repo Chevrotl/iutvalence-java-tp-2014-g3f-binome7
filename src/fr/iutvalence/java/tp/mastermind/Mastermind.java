@@ -6,13 +6,13 @@ package fr.iutvalence.java.tp.mastermind;
  */
 public class Mastermind
 {
-	//Constantes
+	
 	/**
 	 * Nombres de pions par defaut de la combinaison a decouvrir
 	 */
 	public final static int NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT = 5;
 	
-	// attributs
+	
 	/**
 	 * Nombres de pions à découvrir
 	 */
@@ -24,10 +24,14 @@ public class Mastermind
 	// TODO respecter les conventions de nommage
 	private Combinaison combinaisonAleatoire ;
 	
-	//constructeurs
+	private Combinaison combinaisonAleatoireIA ;
+	
+	
 	/**
 	 * Constructeur par defaut, avec les valeurs par defaut
 	 */
+	
+	// Faire donner une valeur a l'entrée pour le nombreDePionsADecouvrir
 	public Mastermind()
 	{
 		this.nombreDePionsADecouvrir = NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ;
@@ -44,5 +48,22 @@ public class Mastermind
 		System.out.println("Lancement d'une partie");
 	}
 	
+	
 
+	
+	
+	public void jouerIAVersusIA()
+	{
+		this.combinaisonAleatoireIA = new Combinaison(NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT);		
+		
+	
+	
+	}
+	
+	 
+		
+		
+		 
 }
+
+
