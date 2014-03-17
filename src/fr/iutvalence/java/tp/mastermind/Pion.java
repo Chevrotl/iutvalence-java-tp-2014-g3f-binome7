@@ -37,20 +37,32 @@ public class Pion
 	{
 		return this.couleur ;
 	}
-	
+
+	@Override
+	public int hashCode()
+	{
+		// renvoi le numero d'ordre de la couleur
+		return this.couleur.ordinal();
+	}
+
 	/**
 	 * methode permettant de comparer la couleur deux pions
 	 * @param pionAComparer
 	 * @return true si le pion a la meme couleur
 	 */
-	public boolean equals(Pion pionAComparer)
+
+	@Override
+	public boolean equals(Object obj)
 	{
-		if (pionAComparer == null) return false ;
-		if (pionAComparer == this) return true ;
-		
-		if (pionAComparer.couleur == this.couleur)
-			return true ;
-		return false;
-		
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Pion))
+			return false;
+		Pion other = (Pion) obj;
+		return (this.couleur == other.couleur);
 	}
+	
+
 }

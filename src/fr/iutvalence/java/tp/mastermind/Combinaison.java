@@ -11,6 +11,7 @@ public class Combinaison
 	 * declaration du tableau de pions pour ne pas que ce soit une variable locale
 	 */
 	private Pion[] combinaisonADecouvrir ;
+	private boolean autreCombinaison;
 	
 	
 	/**
@@ -44,7 +45,15 @@ public class Combinaison
 	}
 	
 	
-	
+	public ResultatComparaison comparerAvec(Combinaison autreCombinaison)
+	{
+		
+		
+		
+		
+		return null;
+		
+	}
 	
 	
 }
