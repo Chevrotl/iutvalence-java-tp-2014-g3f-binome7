@@ -7,41 +7,34 @@ package fr.iutvalence.java.tp.mastermind;
 public class Mastermind
 {
 	//Constantes
-	// TODO renommer (plus lisible)
-	// TODO écrire le commentaire
 	/**
 	 * Nombres de pions par defaut de la combinaison a decouvrir
 	 */
-	public final static int NOMBRE_PIONS_A_DECOUVRIR_PAR_DEFAUT = 5;
+	public final static int NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT = 5;
 	
 	// attributs
-	// TODO renommer (plus lisible)
-	// TODO écrire le commentaire
 	/**
 	 * Nombres de pions à découvrir
 	 */
-	private int nombrePionsADecouvrir ;
+	private int nombreDePionsADecouvrir ;
 	
 	/**
 	 * Combinaison aléatoire de pion de couleur
 	 */
+	// TODO respecter les conventions de nommage
 	private Combinaison CombinaisonAleatoire ;
 	
-	
-	
 	//constructeurs
-	// TODO écrire le commentaire
 	/**
 	 * Constructeur par defaut, avec les valeurs par defaut
 	 */
 	public Mastermind()
 	{
-		this.nombrePionsADecouvrir = NOMBRE_PIONS_A_DECOUVRIR_PAR_DEFAUT ;
-		this.CombinaisonAleatoire = new Combinaison(this.nombrePionsADecouvrir);
+		this.nombreDePionsADecouvrir = NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ;
+		this.CombinaisonAleatoire = new Combinaison(this.nombreDePionsADecouvrir);
 		System.out.println(this.CombinaisonAleatoire);
 	}
 	
-	// TODO écrire un commentaire plus précis
 	/**
 	 * Lance l'integralite d'une partie : Tirage d'une combinaison aléatoire, 
 	 * création grille ...

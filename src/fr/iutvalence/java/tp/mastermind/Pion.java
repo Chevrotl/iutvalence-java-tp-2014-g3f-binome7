@@ -6,7 +6,7 @@ package fr.iutvalence.java.tp.mastermind;
  */
 public class Pion
 {
-
+	// TODO l'attribut ne doit pas être visible
 	/**
 	 * couleur du pion
 	 */

@@ -1,10 +1,5 @@
 package fr.iutvalence.java.tp.mastermind;
 /**
- * Necessaire pour l'utilisation de la classe random.
- */
-import java.util.Random;
-
-/**
  * Combinaison de pions, suivant plusieurs parametres
  * @author chevrotl
  *
