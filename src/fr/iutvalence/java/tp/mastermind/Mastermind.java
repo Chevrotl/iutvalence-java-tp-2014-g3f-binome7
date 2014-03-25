@@ -72,7 +72,7 @@ public class Mastermind
 		System.out.println(this.combinaisonAleatoire);
 		System.out.println(this.combinaisonAleatoireIA);
 		
-		this.combinaisonAleatoire.comparerAvec(this.combinaisonAleatoireIA).toString();
+		System.out.println(this.combinaisonAleatoire.comparerAvec(this.combinaisonAleatoireIA).toString());
 		
 	
 	

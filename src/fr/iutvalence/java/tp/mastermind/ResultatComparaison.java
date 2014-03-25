@@ -27,7 +27,6 @@ public class ResultatComparaison
 
 	
 	
-	
 	@Override
 	public String toString()
 	{
