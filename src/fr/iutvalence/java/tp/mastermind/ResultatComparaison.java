@@ -11,6 +11,8 @@ public class ResultatComparaison
 		this.nombreDePionsBienPlaces = nombreDePionsBienPlaces;
 		this.nombreDePionsMalPlaces = nombreDePionsMalPlaces;
 	}
+	
+	
 
 	public int obtenirNombreDePionsBienPlaces()
 	{
@@ -21,12 +23,16 @@ public class ResultatComparaison
 	{
 		return nombreDePionsMalPlaces;
 	}
+	
 
+	
+	
+	
 	@Override
 	public String toString()
 	{
-		return "ResultatComparaison [nombreDePionsBienPlaces=" + nombreDePionsBienPlaces + ", nombreDePionsMalPlaces="
-				+ nombreDePionsMalPlaces + "]";
+		return "ResultatComparaison [nombreDePionsBienPlaces=" + this.nombreDePionsBienPlaces + ", nombreDePionsMalPlaces="
+				+ this.nombreDePionsMalPlaces + "]";
 	}
 	
 	

@@ -36,7 +36,8 @@ public class Mastermind
 	{
 		this.nombreDePionsADecouvrir = NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ;
 		this.combinaisonAleatoire = new Combinaison(this.nombreDePionsADecouvrir);
-		System.out.println(this.combinaisonAleatoire);
+
+	
 	}
 	
 	/**
@@ -48,13 +49,30 @@ public class Mastermind
 		System.out.println("Lancement d'une partie");
 	}
 	
+	private Combinaison obtenirCombinaisonAleatoire()
+	{
+		return this.combinaisonAleatoire;
+	}
+	
+	private Combinaison obtenirCombinaisonAleatoireIA()
+	{
+		return this.combinaisonAleatoireIA ;
+	}
+	
 	
 
-	
-	
 	public void jouerIAVersusIA()
 	{
-		this.combinaisonAleatoireIA = new Combinaison(NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT);		
+		this.nombreDePionsADecouvrir = NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ;
+		this.combinaisonAleatoire = new Combinaison(this.nombreDePionsADecouvrir);
+		this.combinaisonAleatoireIA = new Combinaison(this.nombreDePionsADecouvrir);	
+		
+		System.out.println("Type de la partie IA vs IA");
+		
+		System.out.println(this.combinaisonAleatoire);
+		System.out.println(this.combinaisonAleatoireIA);
+		
+		this.combinaisonAleatoire.comparerAvec(this.combinaisonAleatoireIA).toString();
 		
 	
 	

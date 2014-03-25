@@ -10,8 +10,7 @@ public class Combinaison
 	/**
 	 * declaration du tableau de pions pour ne pas que ce soit une variable locale
 	 */
-	private Pion[] combinaisonADecouvrir ;
-	private boolean autreCombinaison;
+	private Pion[] pions ;
 	
 	
 	/**
@@ -21,9 +20,9 @@ public class Combinaison
 	{
 		String result ="";
 		
-		for (int i = 0; i < this.combinaisonADecouvrir.length ; i++ )
+		for (int i = 0; i < this.pions.length ; i++ )
 		{
-			result += this.combinaisonADecouvrir[i].obtenirCouleur()+" ";
+			result += this.pions[i].obtenirCouleur()+" ";
 		}
 		
 		return result;
@@ -37,23 +36,59 @@ public class Combinaison
 	 */
 	public Combinaison(int taille)
 	{
-		this.combinaisonADecouvrir = new Pion[taille];
+		this.pions = new Pion[taille];
 		
 		for(int numeroDuPion = 0; numeroDuPion < taille ; numeroDuPion++)
-			this.combinaisonADecouvrir[numeroDuPion] = new Pion ();
+			this.pions[numeroDuPion] = new Pion ();
 
 	}
 	
 	
+
+	
 	public ResultatComparaison comparerAvec(Combinaison autreCombinaison)
 	{
+
+		int nombreDePionsBienPlaces = 0;
+		int nombreDePionsMalPlaces = 0; 
+		boolean [] pionCompare = new boolean[this.pions.length];  
+
+
+
+		for (int numeroDuPion = 0 ; numeroDuPion < this.pions.length ; numeroDuPion++ )
+		{
+
+			if ((this.pions[numeroDuPion].equals(autreCombinaison.pions[numeroDuPion])))
+			{
+				nombreDePionsBienPlaces++; 
+				pionCompare[numeroDuPion] = true ;				
+			}
+			else
+			{
+
+				for (int numeroDuPionAutreCombinaison = 0 ; numeroDuPionAutreCombinaison < this.pions.length ; numeroDuPionAutreCombinaison++)
+				{
+					if (pionCompare[numeroDuPionAutreCombinaison]) 
+						continue;
+
+					if (this.pions[numeroDuPion].equals(autreCombinaison.pions[numeroDuPionAutreCombinaison]))
+					{
+						nombreDePionsMalPlaces++;
+						pionCompare[numeroDuPionAutreCombinaison]=true;
+						break;
+					}
+
+				}
+
+			}
+
+		}
+
 		
-		
-		
-		
-		return null;
-		
+		return new ResultatComparaison(nombreDePionsBienPlaces, nombreDePionsMalPlaces);
+
+
 	}
-	
+
 	
 }
