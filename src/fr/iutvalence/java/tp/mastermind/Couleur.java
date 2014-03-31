@@ -83,4 +83,13 @@ public enum Couleur
 		}
 
 	}
+	
+	/**
+	 * renvoi la liste des couleur en String
+	 * @return Liste des couleurs
+	 */
+	public static String listeCouleur()
+	{
+		return "BLANC, ROUGE, JAUNE, VERT, BLEU, VIOLET, ROSE, ORANGE" ;
+	}
 }

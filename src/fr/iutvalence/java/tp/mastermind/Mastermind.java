@@ -24,8 +24,6 @@ public class Mastermind
 	// TODO respecter les conventions de nommage
 	private Combinaison combinaisonAleatoire ;
 	
-	private Combinaison combinaisonAleatoireIA ;
-	
 	
 	/**
 	 * Constructeur par defaut, avec les valeurs par defaut
@@ -49,39 +47,49 @@ public class Mastermind
 		System.out.println("Lancement d'une partie");
 	}
 	
+	/**
+	 * Renvoi la combinaison aleatoire actuelle de l'ordinateur
+	 * @return combinaisonAleatoire 
+	 */
 	private Combinaison obtenirCombinaisonAleatoire()
 	{
 		return this.combinaisonAleatoire;
 	}
 	
-	private Combinaison obtenirCombinaisonAleatoireIA()
-	{
-		return this.combinaisonAleatoireIA ;
-	}
-	
 	
 
-	public void jouerIAVersusIA()
+	public void jouerIAVersusIA(int nombreDeTourMaximum)
 	{
+		
+		JoueurIA joueurIA = new JoueurIA() ; 
+		
+		
 		this.nombreDePionsADecouvrir = NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ;
 		this.combinaisonAleatoire = new Combinaison(this.nombreDePionsADecouvrir);
-		this.combinaisonAleatoireIA = new Combinaison(this.nombreDePionsADecouvrir);	
+
+		System.out.println("---Type de la partie IA vs IA---");
 		
-		System.out.println("Type de la partie IA vs IA");
-		
+		System.out.println("Combinaison a decouvrir par l'IA :");
 		System.out.println(this.combinaisonAleatoire);
-		System.out.println(this.combinaisonAleatoireIA);
 		
-		System.out.println(this.combinaisonAleatoire.comparerAvec(this.combinaisonAleatoireIA).toString());
+		for(int numeroDuTour = 0 ; numeroDuTour < nombreDeTourMaximum ; numeroDuTour++)
+		{
+			if (this.combinaisonAleatoire.comparerAvec(joueurIA.obtenirCombinaison(this.nombreDePionsADecouvrir)).obtenirNombreDePionsBienPlaces() == this.nombreDePionsADecouvrir)
+				System.out.println("Gagné en "+numeroDuTour+" tours !");
+			
+			
+			System.out.println("Tour "+numeroDuTour);
+			
+			System.out.println("Combinaison proposee : "+joueurIA.obtenirCombinaison(this.nombreDePionsADecouvrir));
+			
+			System.out.println(this.combinaisonAleatoire.comparerAvec(joueurIA.obtenirCombinaison(this.nombreDePionsADecouvrir)).toString());
+			
+		}
 		
-	
+		
 	
 	}
 	
-	 
-		
-		
-		 
 }
 
 

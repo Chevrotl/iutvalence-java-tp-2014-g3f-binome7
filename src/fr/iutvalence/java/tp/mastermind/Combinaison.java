@@ -47,6 +47,11 @@ public class Combinaison
 
 	}
 
+	/**
+	 * Compare la combinaison actuelle de pion avec une autre, renvoi un objet ResultatComparaison
+	 * @param autreCombinaison
+	 * @return ResultatComparaison avec les variables nombreDePionsBienPlaces et nombreDePionsBienPlaces
+	 */
 	public ResultatComparaison comparerAvec(Combinaison autreCombinaison)
 	{
 

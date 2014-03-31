@@ -57,8 +57,8 @@ public class ResultatComparaison
 	@Override
 	public String toString()
 	{
-		return "ResultatComparaison [nombreDePionsBienPlaces=" + this.nombreDePionsBienPlaces + ", nombreDePionsMalPlaces="
-				+ this.nombreDePionsMalPlaces + "]";
+		return "nombreDePionsBienPlaces=" + this.nombreDePionsBienPlaces + ", nombreDePionsMalPlaces="
+				+ this.nombreDePionsMalPlaces;
 	}
 	
 	
