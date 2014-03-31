@@ -24,6 +24,8 @@ public class Mastermind
 	// TODO respecter les conventions de nommage
 	private Combinaison combinaisonAleatoire ;
 	
+	private JoueurIA joueurIA ;
+	
 	
 	/**
 	 * Constructeur par defaut, avec les valeurs par defaut
@@ -37,14 +39,30 @@ public class Mastermind
 
 	
 	}
+
+
 	
 	/**
 	 * Lance l'integralite d'une partie : Tirage d'une combinaison aléatoire, 
 	 * création grille ...
 	 */
-	public void jouer()
+	public void jouer(String nomJoueur, int nombreDeTourMaximum)
 	{
-		System.out.println("Lancement d'une partie");
+		if (nomJoueur == "IA")
+		{
+			JoueurIA joueurIA = new JoueurIA() ;
+			
+			// Mettre ce qu'il ya dans joueur IA dans joueur, dont le tirage automatique
+			// Enlever la classe Joueur IA
+			
+		}
+		else
+		{
+			Joueur joueur = new Joueur(nomJoueur);
+		}
+		
+		
+		
 	}
 	
 	/**
