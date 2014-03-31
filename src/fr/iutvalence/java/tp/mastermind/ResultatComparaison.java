@@ -1,10 +1,28 @@
 package fr.iutvalence.java.tp.mastermind;
 
+/**
+ * Resultat de la comparaison, avec le nombre de pions bien, et mal placés.
+ * @author chevrotl
+ *
+ */
 public class ResultatComparaison
 {
+	/**
+	 * Nb de pions de la bonne couleur a la bonne place
+	 */
 	private final int nombreDePionsBienPlaces;
+	
+	/**
+	 * Nb de pions de la bonne couleur mais pas a la bonne place
+	 */
 	private final int nombreDePionsMalPlaces;
 	
+	
+	/**
+	 * Constructeur par defaut
+	 * @param nombreDePionsBienPlaces
+	 * @param nombreDePionsMalPlaces
+	 */
 	public ResultatComparaison(int nombreDePionsBienPlaces, int nombreDePionsMalPlaces)
 	{
 		super();
@@ -14,14 +32,23 @@ public class ResultatComparaison
 	
 	
 
+	/**
+	 * Accesseur pour renvoyer la variable nombreDePionsBienPlaces
+	 * @return nombreDePionsBienPlaces
+	 */
 	public int obtenirNombreDePionsBienPlaces()
 	{
-		return nombreDePionsBienPlaces;
+		return this.nombreDePionsBienPlaces;
 	}
 
+	
+	/**
+	 * Accesseur pour renvoyer la variable nombreDePionsBienPlaces
+	 * @return nombreDePionsMalPlaces
+	 */
 	public int obtenirNombreDePionsMalPlaces()
 	{
-		return nombreDePionsMalPlaces;
+		return this.nombreDePionsMalPlaces;
 	}
 	
 

@@ -84,8 +84,6 @@ public class Combinaison
 			}
 
 		}
-
-		System.out.println("retour");
 		return new ResultatComparaison(nombreDePionsBienPlaces, nombreDePionsMalPlaces);
 
 	}

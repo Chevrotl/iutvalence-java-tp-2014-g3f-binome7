@@ -47,7 +47,7 @@ public class Pion
 
 	/**
 	 * methode permettant de comparer la couleur deux pions
-	 * @param pionAComparer
+	 * @param obj Un objet a comparer avec
 	 * @return true si le pion a la meme couleur
 	 */
 
