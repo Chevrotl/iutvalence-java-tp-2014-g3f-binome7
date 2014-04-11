@@ -20,7 +20,7 @@ public class LanceurDeMastermind
 		System.out.println("Creation d'une partie de Mastermind");
 		Mastermind PartieDeMastermind = new Mastermind();
 		System.out.println("Demarage de la partie");
-		PartieDeMastermind.jouerIAVersusIA(NOMBRE_DE_TOUR_PAR_DEFAUT);
+		PartieDeMastermind.jouer("nomJoueur",NOMBRE_DE_TOUR_PAR_DEFAUT);
 		System.out.println("Fin de la partie");
 		
 		

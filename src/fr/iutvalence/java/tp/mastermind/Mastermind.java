@@ -48,21 +48,40 @@ public class Mastermind
 	 */
 	public void jouer(String nomJoueur, int nombreDeTourMaximum)
 	{
-		if (nomJoueur == "IA")
-		{
-			JoueurIA joueurIA = new JoueurIA() ;
+			Joueur joueur = new Joueur(nomJoueur) ;
 			
 			// Mettre ce qu'il ya dans joueur IA dans joueur, dont le tirage automatique
 			// Enlever la classe Joueur IA
 			
-		}
-		else
-		{
-			Joueur joueur = new Joueur(nomJoueur);
-		}
-		
-		
-		
+			// generation combinaison aléatoire a decouvrir
+			this.nombreDePionsADecouvrir = NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ;
+			this.combinaisonAleatoire = new Combinaison(this.nombreDePionsADecouvrir);
+			System.out.println("Combinaison a decouvrir"+this.combinaisonAleatoire);
+			
+			//Affichage
+			for(int numeroDuTour = 0 ; numeroDuTour < nombreDeTourMaximum ; numeroDuTour++)
+			{
+				if (this.combinaisonAleatoire.comparerAvec(joueur.obtenirCombinaison(this.nombreDePionsADecouvrir)).obtenirNombreDePionsBienPlaces() == this.nombreDePionsADecouvrir)
+					System.out.println("Gagné en "+numeroDuTour+" tours !");
+				
+				
+				System.out.println("Tour "+numeroDuTour);
+				
+				// a changer par une methode de joueur avec l'entree au clavier
+				System.out.println("Combinaison proposee : "+joueur.obtenirCombinaison(this.nombreDePionsADecouvrir));
+				
+					
+				System.out.println(this.combinaisonAleatoire.comparerAvec(joueur.obtenirCombinaison(this.nombreDePionsADecouvrir)).toString());
+				
+				System.out.println("");
+			
+			
+			}
+			
+				
+			
+			
+
 	}
 	
 	/**
@@ -74,39 +93,6 @@ public class Mastermind
 		return this.combinaisonAleatoire;
 	}
 	
-	
-
-	public void jouerIAVersusIA(int nombreDeTourMaximum)
-	{
-		
-		JoueurIA joueurIA = new JoueurIA() ; 
-		
-		
-		this.nombreDePionsADecouvrir = NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ;
-		this.combinaisonAleatoire = new Combinaison(this.nombreDePionsADecouvrir);
-
-		System.out.println("---Type de la partie IA vs IA---");
-		
-		System.out.println("Combinaison a decouvrir par l'IA :");
-		System.out.println(this.combinaisonAleatoire);
-		
-		for(int numeroDuTour = 0 ; numeroDuTour < nombreDeTourMaximum ; numeroDuTour++)
-		{
-			if (this.combinaisonAleatoire.comparerAvec(joueurIA.obtenirCombinaison(this.nombreDePionsADecouvrir)).obtenirNombreDePionsBienPlaces() == this.nombreDePionsADecouvrir)
-				System.out.println("Gagné en "+numeroDuTour+" tours !");
-			
-			
-			System.out.println("Tour "+numeroDuTour);
-			
-			System.out.println("Combinaison proposee : "+joueurIA.obtenirCombinaison(this.nombreDePionsADecouvrir));
-			
-			System.out.println(this.combinaisonAleatoire.comparerAvec(joueurIA.obtenirCombinaison(this.nombreDePionsADecouvrir)).toString());
-			
-		}
-		
-		
-	
-	}
 	
 }
 

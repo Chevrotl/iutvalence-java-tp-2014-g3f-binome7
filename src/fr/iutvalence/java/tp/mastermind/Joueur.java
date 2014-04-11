@@ -12,6 +12,8 @@ public class Joueur
 	// Besoin d'une methode renvoyant une combinaison
 	
 	
+	
+	
 	/**
 	 * constructeur par defaut
 	 * @param nomJoueur
@@ -21,16 +23,15 @@ public class Joueur
 		this.nomJoueur = nomJoueur ;
 	}
 	
-	public void demanderCouleur() // a finir, mettre "couleur" en type de retour
+	public Combinaison obtenirCombinaison(int tailleCombinaison) // Pour l'instant aléatoire 
 	{
-		System.out.println("Saisissez une des couleurs suivantes :" +Couleur.listeCouleur());
-		Scanner scanner = new Scanner(System.in);
-		
-		String couleurEntree = scanner.nextLine();
-		
-		
-		
-		
-		
+		return(new Combinaison(tailleCombinaison));
 	}
+	
+	
+	//Creer une methode obtenir couleur, que l'on repetera 5 fois pour faire une combinaison
+	// ou
+	// 5 couleur d'un coup.
+
+
 }
