@@ -15,41 +15,64 @@ public enum Couleur
 	 * Definition d'une palette limitée de couleur, gérée par des entiers
 	 */
 
-	BLANC,
+	BLANC('b'),
 	/**
 	 * Definition couleur rouge
 	 */
-	ROUGE,
+	ROUGE('r'),
 
 	/**
 	 * Definition couleur jaune
 	 */
-	JAUNE,
+	JAUNE('j'),
 
 	/**
 	 * Definition couleur vert
 	 */
-	VERT,
+	VERT('v'),
 
 	/**
 	 * Definition couleur bleu
 	 */
-	BLEU,
+	BLEU('B'),
 
 	/**
 	 * Definition couleur violet
 	 */
-	VIOLET,
+	VIOLET('V'),
 
 	/**
 	 * Definition couleur rose
 	 */
-	ROSE,
+	ROSE('R'),
 
 	/**
 	 * Definition couleur orange
 	 */
-	ORANGE;
+	ORANGE('o');
+
+	/**
+	 * variable utilise pour le code couleur
+	 */
+	private final char colorChar;
+
+	/**
+	 * Constructeur interne pour affecter a la variable de la classe la valeur de celle recu en parametre
+	 * @param colorChar
+	 */
+	private Couleur(char colorChar)
+	{
+		this.colorChar = colorChar;
+	}
+	
+	/**
+	 * renvoi le code couleur actuel
+	 * @return colorChar
+	 */
+	public char obtenirColorChar()
+	{
+		return this.colorChar;
+	}
 
 	/**
 	 * Renvoi une couleur aléatoire définie dans la classe
@@ -59,37 +82,37 @@ public enum Couleur
 
 	public static Couleur obtenirCouleurAleatoire()
 	{
-		Random random = new Random();
+		Random random = new Random(Couleur.values().length); //couleur.values renvoi le tableau des enum
 
-		switch (random.nextInt(8))
-		{
-		case 0:
-			return BLANC;
-		case 1:
-			return ROUGE;
-		case 2:
-			return JAUNE;
-		case 3:
-			return VERT;
-		case 4:
-			return BLEU;
-		case 5:
-			return VIOLET;
-		case 6:
-			return ROSE;
-		case 7:
-		default:
-			return ORANGE;
-		}
-
+		int colorNumber = random.nextInt(8);
+		return Couleur.values()[colorNumber]; 
+		// Une enum est un tableau, on tire une case au hasard, sortant une Couleur au hasard
 	}
-	
+
 	/**
 	 * renvoi la liste des couleur en String
+	 * 
 	 * @return Liste des couleurs
 	 */
 	public static String listeCouleur()
 	{
-		return "BLANC, ROUGE, JAUNE, VERT, BLEU, VIOLET, ROSE, ORANGE" ;
+		String result = "";
+		for (Couleur couleur : Couleur.values())
+			result = result + couleur.name()+" : "+couleur.colorChar;
+		return result;
+	}
+
+	/**
+	 * Renvoi une couleur en fonction de son code couleur, 
+	 * renvoi null si le code n 'est pas dans la liste
+	 * @param codeCouleur
+	 * @return Couleur
+	 */
+	public static Couleur parseCouleur(char codeCouleur)
+	{
+		for (Couleur couleur : Couleur.values())
+			if (couleur.colorChar == codeCouleur)
+				return couleur;
+		return null;
 	}
 }

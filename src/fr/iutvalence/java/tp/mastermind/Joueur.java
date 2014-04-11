@@ -1,34 +1,20 @@
 package fr.iutvalence.java.tp.mastermind;
 
-import java.util.Scanner;
 
-public class Joueur
+public abstract class Joueur
 {
+
 	
-	/**
-	 * nom du joueur
-	 */
-	private String nomJoueur ;
 	// Besoin d'une methode renvoyant une combinaison
-	
-	
-	
-	
+
 	/**
-	 * constructeur par defaut
-	 * @param nomJoueur
+	 * Methode abstraite qui renvoi une combinaison redefinie dans les classe des joueurs
+	 * @param tailleCombinaison
+	 * @return une Combinaison
 	 */
-	public Joueur (String nomJoueur)
-	{
-		this.nomJoueur = nomJoueur ;
-	}
-	
-	public Combinaison obtenirCombinaison(int tailleCombinaison) // Pour l'instant aléatoire 
-	{
-		return(new Combinaison(tailleCombinaison));
-	}
-	
-	
+	public abstract Combinaison obtenirCombinaison(int tailleCombinaison);
+
+		
 	//Creer une methode obtenir couleur, que l'on repetera 5 fois pour faire une combinaison
 	// ou
 	// 5 couleur d'un coup.

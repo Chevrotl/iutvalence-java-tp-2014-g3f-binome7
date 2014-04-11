@@ -24,7 +24,7 @@ public class Mastermind
 	// TODO respecter les conventions de nommage
 	private Combinaison combinaisonAleatoire ;
 	
-	private JoueurIA joueurIA ;
+	private Joueur joueur ;
 	
 	
 	/**
@@ -32,11 +32,11 @@ public class Mastermind
 	 */
 	
 	// Faire donner une valeur a l'entrée pour le nombreDePionsADecouvrir
-	public Mastermind()
+	public Mastermind(Joueur joueurLanceur)
 	{
 		this.nombreDePionsADecouvrir = NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ;
 		this.combinaisonAleatoire = new Combinaison(this.nombreDePionsADecouvrir);
-
+		this.joueur = joueurLanceur ;
 	
 	}
 
@@ -48,7 +48,7 @@ public class Mastermind
 	 */
 	public void jouer(String nomJoueur, int nombreDeTourMaximum)
 	{
-			Joueur joueur = new Joueur(nomJoueur) ;
+			
 			
 			// Mettre ce qu'il ya dans joueur IA dans joueur, dont le tirage automatique
 			// Enlever la classe Joueur IA

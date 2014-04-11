@@ -5,7 +5,7 @@ package fr.iutvalence.java.tp.mastermind;
  * @author chevrotl
  *
  */
-public class JoueurIA
+public class JoueurIA extends Joueur
 {
 	
 	/**
