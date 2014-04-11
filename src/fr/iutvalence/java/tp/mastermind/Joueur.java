@@ -1,11 +1,14 @@
 package fr.iutvalence.java.tp.mastermind;
 
 
+
 public abstract class Joueur
 {
-
+	
 	
 	// Besoin d'une methode renvoyant une combinaison
+
+	
 
 	/**
 	 * Methode abstraite qui renvoi une combinaison redefinie dans les classe des joueurs
