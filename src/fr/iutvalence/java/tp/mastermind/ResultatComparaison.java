@@ -20,8 +20,8 @@ public class ResultatComparaison
 	
 	/**
 	 * Constructeur par defaut
-	 * @param nombreDePionsBienPlaces
-	 * @param nombreDePionsMalPlaces
+	 * @param nombreDePionsBienPlaces nombre de pions bien places
+	 * @param nombreDePionsMalPlaces nombre de pions mal places
 	 */
 	public ResultatComparaison(int nombreDePionsBienPlaces, int nombreDePionsMalPlaces)
 	{

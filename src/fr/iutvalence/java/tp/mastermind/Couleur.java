@@ -58,7 +58,7 @@ public enum Couleur
 
 	/**
 	 * Constructeur interne pour affecter a la variable de la classe la valeur de celle recu en parametre
-	 * @param colorChar
+	 * @param colorChar character representant une couleur (cf enum)
 	 */
 	private Couleur(char colorChar)
 	{
@@ -82,9 +82,9 @@ public enum Couleur
 
 	public static Couleur obtenirCouleurAleatoire()
 	{
-		Random random = new Random(Couleur.values().length); //couleur.values renvoi le tableau des enum
+		Random random = new Random(); //couleur.values renvoi le tableau des enum
 
-		int colorNumber = random.nextInt(8);
+		int colorNumber = random.nextInt(Couleur.values().length);
 		return Couleur.values()[colorNumber]; 
 		// Une enum est un tableau, on tire une case au hasard, sortant une Couleur au hasard
 	}
@@ -98,15 +98,15 @@ public enum Couleur
 	{
 		String result = "";
 		for (Couleur couleur : Couleur.values())
-			result = result + couleur.name()+" : "+couleur.colorChar;
+			result = result + couleur.name()+" : "+couleur.colorChar+" ";
 		return result;
 	}
 
 	/**
 	 * Renvoi une couleur en fonction de son code couleur, 
 	 * renvoi null si le code n 'est pas dans la liste
-	 * @param codeCouleur
-	 * @return Couleur
+	 * @param codeCouleur character representant une couleur
+	 * @return Couleur une couleur
 	 */
 	public static Couleur parseCouleur(char codeCouleur)
 	{

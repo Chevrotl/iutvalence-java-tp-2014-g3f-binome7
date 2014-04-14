@@ -48,8 +48,40 @@ public class Combinaison
 	}
 
 	/**
+	 * Creation d'une combinaison de taille et de couleurs données
+	 * @param pions tableau de pion pour la combinaison
+	 */
+	public Combinaison(Pion[] pions)
+	{
+		this.pions = pions;
+	}
+	
+	/**
+	 * Creation d'une combinaison en fonction d'un mot compose de code couleurs
+	 * @param combinaisonADecouper String de code couleurs
+	 * @return une combinaison en fonction du string rentree
+	 */
+	public static Combinaison parseCombinaison(String combinaisonADecouper)
+	{
+		Pion[] pions = new Pion[combinaisonADecouper.length()];
+		
+		for(int numeroDuPion = 0; numeroDuPion < combinaisonADecouper.length() ; numeroDuPion++)
+		{
+			Couleur couleur = Couleur.parseCouleur(combinaisonADecouper.charAt(numeroDuPion));
+			if (couleur == null) return null;
+			pions[numeroDuPion] = new Pion(couleur);
+		}
+			
+		return new Combinaison(pions);
+	}
+	
+	
+	
+
+
+	/**
 	 * Compare la combinaison actuelle de pion avec une autre, renvoi un objet ResultatComparaison
-	 * @param autreCombinaison
+	 * @param autreCombinaison combinaison avec laquelle la combinaison actuelle sera comparee
 	 * @return ResultatComparaison avec les variables nombreDePionsBienPlaces et nombreDePionsBienPlaces
 	 */
 	public ResultatComparaison comparerAvec(Combinaison autreCombinaison)
@@ -57,32 +89,39 @@ public class Combinaison
 
 		int nombreDePionsBienPlaces = 0;
 		int nombreDePionsMalPlaces = 0;
-		boolean[] pionANegliger = new boolean[this.pions.length];
+		boolean[] pionANegligerDansLaCombinaison = new boolean[this.pions.length];
+		boolean[] pionANegligerDansLAutreCombinaison = new boolean[this.pions.length];
 
 		for (int numeroDuPion = 0; numeroDuPion < this.pions.length; numeroDuPion++)
 		{
+				pionANegligerDansLaCombinaison[numeroDuPion] = false;
+				pionANegligerDansLAutreCombinaison[numeroDuPion] = false;
+		}
 
+		for (int numeroDuPion = 0; numeroDuPion < this.pions.length; numeroDuPion++)
+		{
 			if ((this.pions[numeroDuPion].equals(autreCombinaison.pions[numeroDuPion])))
 			{
 				nombreDePionsBienPlaces++;
-				pionANegliger[numeroDuPion] = true;
-				continue;
+				pionANegligerDansLaCombinaison[numeroDuPion] = true;
+				pionANegligerDansLAutreCombinaison[numeroDuPion] = true;
 			}
 		}
 		
-		for (int numeroDuPion = 0; numeroDuPion < this.pions.length; numeroDuPion++)
+		for (int numeroDuPionDansLaCombinaison = 0; numeroDuPionDansLaCombinaison < this.pions.length; numeroDuPionDansLaCombinaison++)
 		{
-			if (pionANegliger[numeroDuPion]) continue;
+			if (pionANegligerDansLaCombinaison[numeroDuPionDansLaCombinaison]) continue;
 			
-			for (int numeroDuPionAutreCombinaison = 0; numeroDuPionAutreCombinaison < this.pions.length; numeroDuPionAutreCombinaison++)
+			for (int numeroDuPionDansLAutreCombinaison = 0; numeroDuPionDansLAutreCombinaison < this.pions.length; numeroDuPionDansLAutreCombinaison++)
 			{
-				if (pionANegliger[numeroDuPionAutreCombinaison])
+				if (pionANegligerDansLAutreCombinaison[numeroDuPionDansLAutreCombinaison])
 					continue;
 
-				if (this.pions[numeroDuPion].equals(autreCombinaison.pions[numeroDuPionAutreCombinaison]))
+				if (this.pions[numeroDuPionDansLaCombinaison].equals(autreCombinaison.pions[numeroDuPionDansLAutreCombinaison]))
 				{
 					nombreDePionsMalPlaces++;
-					pionANegliger[numeroDuPionAutreCombinaison] = true;
+					pionANegligerDansLaCombinaison[numeroDuPionDansLaCombinaison] = true;
+					pionANegligerDansLAutreCombinaison[numeroDuPionDansLAutreCombinaison] = true;
 					break;
 				}
 

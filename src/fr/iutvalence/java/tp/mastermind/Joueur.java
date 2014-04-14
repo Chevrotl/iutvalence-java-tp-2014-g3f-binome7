@@ -1,7 +1,11 @@
 package fr.iutvalence.java.tp.mastermind;
 
 
-
+/**
+ * Classe mere des joueurs IA et Humain
+ * @author chevrotl
+ *
+ */
 public abstract class Joueur
 {
 	
@@ -12,10 +16,9 @@ public abstract class Joueur
 
 	/**
 	 * Methode abstraite qui renvoi une combinaison redefinie dans les classe des joueurs
-	 * @param tailleCombinaison
 	 * @return une Combinaison
 	 */
-	public abstract Combinaison obtenirCombinaison(int tailleCombinaison);
+	public abstract Combinaison obtenirCombinaison();
 
 		
 	//Creer une methode obtenir couleur, que l'on repetera 5 fois pour faire une combinaison
