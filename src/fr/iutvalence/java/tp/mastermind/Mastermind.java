@@ -31,16 +31,22 @@ public class Mastermind
 	private Joueur joueur;
 
 	/**
+	 * L'affichage
+	 */
+	private Affichage affichage;
+
+	/**
 	 * Constructeur par defaut, avec les valeurs par defaut
 	 * @param joueurLanceur joueur creer dans le lanceur
 	 */
 
 	// Faire donner une valeur a l'entrée pour le nombreDePionsADecouvrir
-	public Mastermind(Joueur joueurLanceur)
+	public Mastermind(Joueur joueurLanceur, Affichage affichage)
 	{
 		this.nombreDePionsADecouvrir = NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT;
 		this.combinaisonAleatoire = new Combinaison(this.nombreDePionsADecouvrir);
 		this.joueur = joueurLanceur;
+		this.affichage = affichage;
 
 	}
 
@@ -53,37 +59,31 @@ public class Mastermind
 	public void jouer(String nomJoueur, int nombreDeTourMaximum)
 	{
 
-		// Mettre ce qu'il ya dans joueur IA dans joueur, dont le tirage
-		// automatique
-		// Enlever la classe Joueur IA
-
-		// generation combinaison aléatoire a decouvrir
 		this.nombreDePionsADecouvrir = NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT;
 		this.combinaisonAleatoire = new Combinaison(this.nombreDePionsADecouvrir);
 		
-
 		// Affichage
 		for (int numeroDuTour = 1; numeroDuTour <= nombreDeTourMaximum; numeroDuTour++)
 		{
-			System.out.println("Tour " + numeroDuTour);
+			this.affichage.afficherDebutDeTout(numeroDuTour);
 
+			this.affichage.afficherDemandeDeCombinaison();
+			
 			Combinaison combinaisonProposee = this.joueur.obtenirCombinaison();
 			
 			if (combinaisonProposee == null)
 					continue;
-			
-			System.out.println("Combinaison proposee : " + combinaisonProposee);
 
 			ResultatComparaison resultatComparaison = this.combinaisonAleatoire.comparerAvec(combinaisonProposee);
-			System.out.println(resultatComparaison);
+			this.affichage.afficherResultatcomparaison(resultatComparaison);
 
 			if (resultatComparaison.obtenirNombreDePionsBienPlaces() == this.nombreDePionsADecouvrir)
 			{
-				System.out.println("Gagné en " + numeroDuTour + " tours !");
+				this.affichage.afficherVictoire(numeroDuTour);
 				break;
 			}
 		}
-		System.out.println("Combinaison a decouvrir" + "\n" + this.combinaisonAleatoire);
+		this.affichage.afficherDefaite(combinaisonAleatoire);
 	}
 
 

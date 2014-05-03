@@ -17,15 +17,9 @@ public class LanceurDeMastermind
 	 */
 	public static void main(String[] args)
 	{
-		System.out.println("Creation d'une partie de Mastermind");
 		Joueur joueur = new JoueurHumain("Cedric") ;
 		//Joueur joueur = new JoueurIA() ;
-		Mastermind PartieDeMastermind = new Mastermind(joueur);
-		System.out.println("Demarage de la partie");
-		PartieDeMastermind.jouer("nomJoueur",NOMBRE_DE_TOUR_PAR_DEFAUT);
-		System.out.println("Fin de la partie");
-		
-		
+		Mastermind PartieDeMastermind = new Mastermind(joueur, new AffichageConsole());
+		PartieDeMastermind.jouer("nomJoueur",NOMBRE_DE_TOUR_PAR_DEFAUT);	
 	}
-
 }
