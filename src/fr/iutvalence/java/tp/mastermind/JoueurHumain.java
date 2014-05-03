@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
  * @author chevrotl
  *
  */
-public class JoueurHumain extends Joueur
+public class JoueurHumain implements Joueur
 {
 	/**
 	 * variable locale du nom du joueur entree en parametre lors de la creation de celui ci
