@@ -22,19 +22,24 @@ public class LanceurDeMastermind
 	 */
 	public static void main(String[] args)
 	{
+
 		
 		SwingUtilities.invokeLater(new TacheAffichageMastermind());
 		System.out.println("Creation d'une partie de Mastermind");
+
+
 		Joueur joueur = new JoueurHumain("Cedric") ;
 		//Joueur joueur = new JoueurIA() ;
-		Mastermind PartieDeMastermind = new Mastermind(joueur);
+
+//		Mastermind PartieDeMastermind = new Mastermind(joueur, null);
 		
-		System.out.println("Demarage de la partie");
-		PartieDeMastermind.jouer("nomJoueur",NOMBRE_DE_TOUR_PAR_DEFAUT);
+		System.out.println("Demarage de la partie");		
+
+		Mastermind PartieDeMastermind = new Mastermind(joueur, new AffichageConsole());
+		PartieDeMastermind.jouer("nomJoueur",NOMBRE_DE_TOUR_PAR_DEFAUT);	
 		System.out.println("Fin de la partie");
-		
-		
 	}
+
 
 
 }
