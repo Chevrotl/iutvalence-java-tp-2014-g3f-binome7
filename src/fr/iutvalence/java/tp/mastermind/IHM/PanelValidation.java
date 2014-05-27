@@ -10,21 +10,24 @@ import fr.iutvalence.java.tp.mastermind.LanceurDeMastermind;
 
 public class PanelValidation extends JPanel
 {
+	
+	
 
 	public PanelValidation()
 	{
-		GridLayout grillePanelJeux = new GridLayout(LanceurDeMastermind.NOMBRE_DE_TOUR_PAR_DEFAUT, 1) ;
 		
-		 this.setLayout(grillePanelJeux);
-		 grillePanelJeux.setVgap(10);
-		
-		for(int numeroCase = 0 ; numeroCase < LanceurDeMastermind.NOMBRE_DE_TOUR_PAR_DEFAUT ; numeroCase++)
-		{
-			this.add(new JButton()); 
-			this.add(new JButton());
-		}
-		
-		
+		JButton buttonValidation = new JButton("Valider") ;
+		JButton buttonAnnuler = new JButton("Annuler");
+		GridLayout grillePanelJeux = new GridLayout(1, 0) ;
+
+		this.setLayout(grillePanelJeux);
+
+
+		this.add(buttonValidation); 
+		this.add(buttonAnnuler);
+
+
+
 	}
 
 }

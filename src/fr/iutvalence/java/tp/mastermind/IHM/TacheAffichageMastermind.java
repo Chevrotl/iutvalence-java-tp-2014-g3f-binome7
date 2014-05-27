@@ -13,13 +13,14 @@ import javax.swing.WindowConstants;
 
 import fr.iutvalence.java.tp.mastermind.*;
 
-public class TacheAffichageMastermind implements Runnable
+public class TacheAffichageMastermind implements Runnable 
 {
 
 	public void run()
 	{
 		PanelValidation panelValidation = new PanelValidation();
 		PanelDeJeu panelDeJeu = new PanelDeJeu();
+		
 		
 		
 		JFrame fenetreMastermind = new JFrame() ;
@@ -33,14 +34,15 @@ public class TacheAffichageMastermind implements Runnable
 		GridLayout grillePanelCombinaison = new GridLayout(LanceurDeMastermind.NOMBRE_DE_TOUR_PAR_DEFAUT, 1) ;
 		
 		JSplitPane splitPaneprincipal = new JSplitPane(SwingConstants.VERTICAL,panelValidation,panelDeJeu) ;
+		splitPaneprincipal.setEnabled(false);
 		
-		 grillePanelCombinaison.setVgap(10);
 		
 		for(int numeroCase = 0 ; numeroCase < LanceurDeMastermind.NOMBRE_DE_TOUR_PAR_DEFAUT ; numeroCase++)
 		{
 			for(int numeroButton = 0 ; numeroButton < Mastermind.NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ; numeroButton++)
 			{
 				panelPrincipal.add(splitPaneprincipal);
+				//methode qui joue un tour du jeu, puis creer un nouveau splitpan avec les nouvelles coordonnées
 			}
 			
 		}
