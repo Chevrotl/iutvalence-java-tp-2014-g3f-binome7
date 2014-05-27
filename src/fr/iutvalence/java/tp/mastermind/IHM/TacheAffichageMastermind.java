@@ -13,13 +13,14 @@ import javax.swing.WindowConstants;
 
 import fr.iutvalence.java.tp.mastermind.*;
 
-public class TacheAffichageMastermind implements Runnable 
+public class TacheAffichageMastermind implements Runnable, Affichage 
 {
+	PanelVerification panelVerification = new PanelVerification(); 
+	PanelDeJeu panelDeJeu = new PanelDeJeu();
 
 	public void run()
 	{
-		PanelValidation panelValidation = new PanelValidation();
-		PanelDeJeu panelDeJeu = new PanelDeJeu();
+		
 		
 		
 		
@@ -33,7 +34,7 @@ public class TacheAffichageMastermind implements Runnable
 		
 		GridLayout grillePanelCombinaison = new GridLayout(LanceurDeMastermind.NOMBRE_DE_TOUR_PAR_DEFAUT, 1) ;
 		
-		JSplitPane splitPaneprincipal = new JSplitPane(SwingConstants.VERTICAL,panelValidation,panelDeJeu) ;
+		JSplitPane splitPaneprincipal = new JSplitPane(SwingConstants.VERTICAL,this.panelVerification,this.panelDeJeu) ;
 		splitPaneprincipal.setEnabled(false);
 		
 		
@@ -42,7 +43,8 @@ public class TacheAffichageMastermind implements Runnable
 			for(int numeroButton = 0 ; numeroButton < Mastermind.NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ; numeroButton++)
 			{
 				panelPrincipal.add(splitPaneprincipal);
-				//methode qui joue un tour du jeu, puis creer un nouveau splitpan avec les nouvelles coordonnées
+				//panelPrincipal.add(new JSplitPane(SwingConstants.VERTICAL,new PanelValidation(), new PanelDeJeu()));
+				//methode qui joue un tour du jeu, puis creer un nouveau splitpan avec les nouvelles coordonnï¿½es
 			}
 			
 		}
@@ -54,6 +56,43 @@ public class TacheAffichageMastermind implements Runnable
 		fenetreMastermind.setVisible(true);
 	
 	}
-	
-	
+
+	@Override
+	public void afficherDebutDeTout(int numeroDuTour)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void afficherDemandeDeCombinaison()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void afficherResultatcomparaison(ResultatComparaison resultatComparaison)
+	{
+		this.panelVerification.setNombreDePionsBienPlaces(resultatComparaison.obtenirNombreDePionsBienPlaces());
+		this.panelVerification.setNombreDePionsMalPlaces(resultatComparaison.obtenirNombreDePionsMalPlaces());
+		
+		
+	}
+
+	@Override
+	public void afficherVictoire(int numeroDuTour)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void afficherDefaite(Combinaison combinaisonAleatoire)
+	{
+		// TODO Auto-generated method stub
+		
+	}
 }
+	
+

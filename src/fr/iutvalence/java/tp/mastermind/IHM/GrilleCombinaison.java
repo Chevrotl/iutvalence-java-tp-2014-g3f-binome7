@@ -5,13 +5,16 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import fr.iutvalence.java.tp.mastermind.Combinaison;
+import fr.iutvalence.java.tp.mastermind.Couleur;
 import fr.iutvalence.java.tp.mastermind.LanceurDeMastermind;
 import fr.iutvalence.java.tp.mastermind.Mastermind;
+import fr.iutvalence.java.tp.mastermind.Pion;
 
 public class GrilleCombinaison extends JPanel
 {
 	
-	private ButtonCouleur[] tableauBoutonCouleur = new ButtonCouleur[Mastermind.NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT];
+	public ButtonCouleur[] tableauBoutonCouleur = new ButtonCouleur[Mastermind.NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT];
 	
 	public GrilleCombinaison()
 	{
@@ -24,18 +27,39 @@ public class GrilleCombinaison extends JPanel
 		for(int numeroButton = 0 ; numeroButton < Mastermind.NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ; numeroButton++)
 		{
 			
-			this.add(tableauBoutonCouleur[numeroButton] = new ButtonCouleur());
+			this.add(this.tableauBoutonCouleur[numeroButton] = new ButtonCouleur());
 			
 		}
-		System.out.println(this.tableauBoutonCouleur[3].toString());
+		
 		
 	}
 
 	public ButtonCouleur[] getTableauBoutonCouleur() 
 	{
-		return tableauBoutonCouleur;
+		return this.tableauBoutonCouleur ;
+	}
+	
+	public Combinaison combinaisonCouleurButton()
+	{
+		Pion[] pions = new Pion[Mastermind.NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT];
+		
+		for(int numeroButton = 0 ; numeroButton < Mastermind.NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ; numeroButton++)
+		{
+			pions[numeroButton] = new Pion(this.tableauBoutonCouleur[numeroButton].getCouleurButton()) ;
+		}
+		
+		return new Combinaison(pions);
 	}
 
+	public void remiseAZeroCombinaisonAffichée()
+	{
+		for(int numeroButton = 0 ; numeroButton < Mastermind.NOMBRE_DE_PIONS_A_DECOUVRIR_PAR_DEFAUT ; numeroButton++)
+		{
+			
+			this.tableauBoutonCouleur[numeroButton].setNumeroCouleur(0); 
+			
+		}
+	}
 	
 	
 }

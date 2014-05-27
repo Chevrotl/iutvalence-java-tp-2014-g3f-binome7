@@ -12,19 +12,30 @@ import fr.iutvalence.java.tp.mastermind.Mastermind;
 
 public class PanelDeJeu extends JSplitPane
 {
+	private PanelValidation panelValidation ;
+	
+	private GrilleCombinaison grilleCombinaison ;
 
 	public PanelDeJeu()
 	{
 		super(SwingConstants.VERTICAL);
 		
-		PanelVerification panelVerification = new PanelVerification();
-		GrilleCombinaison grilleCombinaison = new GrilleCombinaison();
+		 this.panelValidation = new PanelValidation(this.grilleCombinaison);
+		 this.grilleCombinaison = new GrilleCombinaison();
 		this.setResizeWeight(1.0);
 		this.setEnabled(false);
-		this.add(grilleCombinaison);
-		this.add(panelVerification);
+		this.add(this.grilleCombinaison);
+		this.add(this.panelValidation);
 		
 		
 	}
+
+	public GrilleCombinaison getGrilleCombinaison()
+	{
+		return this.grilleCombinaison;
+	}
+	
+	
+	
 	
 }

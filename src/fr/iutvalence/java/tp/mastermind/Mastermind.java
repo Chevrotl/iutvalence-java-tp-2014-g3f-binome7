@@ -83,7 +83,7 @@ public class Mastermind
 				break;
 			}
 		}
-		this.affichage.afficherDefaite(combinaisonAleatoire);
+		this.affichage.afficherDefaite(this.combinaisonAleatoire);
 	}
 
 

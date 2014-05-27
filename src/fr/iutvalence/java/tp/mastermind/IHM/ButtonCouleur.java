@@ -32,15 +32,32 @@ public class ButtonCouleur extends JButton implements ActionListener
 
 	public void actionPerformed(ActionEvent event)
 	{
-		if(numeroCouleur == this.couleurButton.values().length - 1)
+		if(this.numeroCouleur == this.couleurButton.values().length - 1)
 		{	
-			numeroCouleur = 0 ;
+			this.numeroCouleur = 0 ;
 		}
 		else
 		{
-			numeroCouleur++;
+			this.numeroCouleur++;
 		}
 		this.mettreAJourCouleur();
 	}
+	
+	public Couleur getCouleurButton()
+	{
+		return this.couleurButton ;
+	}
+
+	public void setNumeroCouleur(int numeroCouleur)
+	{
+		this.numeroCouleur = numeroCouleur;
+		this.mettreAJourCouleur();
+		
+	}
+
+	
+	
+	
+	
 
 }

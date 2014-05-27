@@ -2,6 +2,7 @@ package fr.iutvalence.java.tp.mastermind;
 
 import javax.swing.SwingUtilities;
 
+import fr.iutvalence.java.tp.mastermind.IHM.PanelValidation;
 import fr.iutvalence.java.tp.mastermind.IHM.TacheAffichageMastermind;
 
 /**
@@ -29,13 +30,16 @@ public class LanceurDeMastermind
 
 
 		Joueur joueur = new JoueurHumain("Cedric") ;
+		
+		
+		
 		//Joueur joueur = new JoueurIA() ;
 
 //		Mastermind PartieDeMastermind = new Mastermind(joueur, null);
 		
 		System.out.println("Demarage de la partie");		
 
-		Mastermind PartieDeMastermind = new Mastermind(joueur, new AffichageConsole());
+		Mastermind PartieDeMastermind = new Mastermind(joueur, new TacheAffichageMastermind());
 		PartieDeMastermind.jouer("nomJoueur",NOMBRE_DE_TOUR_PAR_DEFAUT);	
 		System.out.println("Fin de la partie");
 	}

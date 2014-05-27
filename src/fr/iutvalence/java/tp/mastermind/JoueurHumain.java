@@ -3,6 +3,8 @@ package fr.iutvalence.java.tp.mastermind;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import fr.iutvalence.java.tp.mastermind.IHM.PanelValidation;
 /**
  * Classe joueur humain avec l'interaction au clavier
  * @author chevrotl
@@ -60,7 +62,7 @@ public class JoueurHumain implements Joueur
 	}
 
 	
-
+	
 	
 	//Creer une methode utilisant le bufferedreader pour lire les entree clavier
 	//cf code TD2 pendu
